@@ -1,10 +1,4 @@
 // Programa con el constructor class
-class Libro{
-    constructor(nombre, autor){
-        this.nombre = nombre;
-        this.autor = autor;
-    }
-}
 class Usuario{
     constructor(nombre, apellido, libros, mascotas){
         this.nombre = nombre;
@@ -21,29 +15,26 @@ class Usuario{
     getMascotas(){
         return this.mascotas.length;
     }
-    addBook(libro){
-        this.libros.push(libro);
+    addBook(titulo, autor){
+        this.libros.push({ titulo, autor })
     }
     getBooks(){
-        let nombreslibros = [];
-        this.libros.forEach(element => {
-            nombreslibros.push(element.nombre)
-        });
-        return nombreslibros;
+        let librosTitulo = []
+        this.libros.forEach((libro) => librosTitulo.push(libro.titulo));
+        return librosTitulo;
     }
 }
 
-let libro1 = new Libro('Maze Runner', 'Prendal');
-let libro2 = new Libro('Prueba de Fuego', 'Prendal');
-let libro3 = new Libro('Cura Mortal', 'Prendal');
-let usuario = new Usuario('Luciano','Yomayel', [libro1,libro2,libro3], ['Tobi','Peque'])
+let usuario = new Usuario('Luciano','Yomayel', [{titulo: 'Maze Runer', autor:'Prendal'},{titulo:'Prueba de Fuego', autor:'Prendal'}], ['Tobi','Peque'])
 
 console.log(usuario.getFullName());
 console.log(usuario.getMascotas());
-usuario.addMascota('Peque')
+usuario.addMascota('Lola')
 usuario.addMascota('Morita')
 console.log(usuario.mascotas);
+
 console.log(usuario.getMascotas());
 console.log(usuario.getBooks());
-usuario.addBook(libro3);
+usuario.addBook(titulo= 'Cura Mortal', autor='Prendal');
 console.log(usuario.getBooks());
+console.log(usuario.libros);

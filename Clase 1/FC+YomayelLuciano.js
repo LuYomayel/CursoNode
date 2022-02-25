@@ -1,8 +1,4 @@
 //Programa con la funcion constructora
-function libro(nombre, autor){
-    this.nombre = nombre;
-    this.autor = autor;
-}
 function Usuario(nombre, apellido, libros, mascotas){
     this.nombre = nombre;
     this.apellido = apellido;
@@ -23,30 +19,27 @@ Usuario.prototype.getMascotas = function(){
     return this.mascotas.length;
 }
 
-Usuario.prototype.addBook = function(libro) {
-    this.libros.push(libro);
+Usuario.prototype.addBook = function(titulo, autor) {
+    this.libros.push({ titulo, autor })
 }
 
 Usuario.prototype.getBooks = function(){
-    let nombreslibros = [];
-    this.libros.forEach(element => {
-        nombreslibros.push(element.nombre)
-    });
-    return nombreslibros;
+    let librosTitulo = []
+    this.libros.forEach((libro) => librosTitulo.push(libro.titulo));
+    return librosTitulo;
 }
 
-let libro1 = new libro('Maze Runner', 'Prendal');
-let libro2 = new libro('Prueba de Fuego', 'Prendal');
-let libro3 = new libro('Cura Mortal', 'Prendal');
-let usuario = new Usuario('Luciano','Yomayel', [libro1,libro2], ['Tobi','Peque'])
+
+let usuario = new Usuario('Luciano','Yomayel', [{titulo: 'Maze Runer', autor:'Prendal'},{titulo:'Prueba de Fuego', autor:'Prendal'}], ['Tobi','Peque'])
 
 console.log(usuario.getFullName());
 console.log(usuario.getMascotas());
-usuario.addMascota('Peque')
+usuario.addMascota('Lola')
 usuario.addMascota('Morita')
 console.log(usuario.mascotas);
+
 console.log(usuario.getMascotas());
 console.log(usuario.getBooks());
-usuario.addBook(libro3);
+usuario.addBook(titulo= 'Cura Mortal', autor='Prendal');
 console.log(usuario.getBooks());
-
+console.log(usuario.libros);
