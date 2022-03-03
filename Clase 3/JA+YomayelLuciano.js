@@ -2,7 +2,7 @@ function mostrarPalabrasEnXTiempo(
     texto,
     tiempo = 1000,
     callbackFunction,
-    esUltimo
+    
 ) {
     return new Promise((resolve) => {
         let array = texto.split(' ');
@@ -49,4 +49,6 @@ const loader = (esUltimo) => {
         : console.log(`...Esperando siguiente texto... `);
 };
 
-ejecucion();
+//ejecucion();
+
+console.log("hola");
