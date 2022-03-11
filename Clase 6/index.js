@@ -8,7 +8,7 @@ class Archivo {
         try {
             if(!fs.existsSync(`${this.nombre}`)){
                 
-                await fs.promises.writeFile(`${this.nombre}`,'[]')
+                //await fs.promises.writeFile(`${this.nombre}`,'[]')
                 return console.log('[]');
             }else{
                 
