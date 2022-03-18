@@ -1,0 +1,38 @@
+[
+	{
+		"title": "Auriculares",
+		"price": 65000,
+		"thumbnail": "https://images.samsung.com/is/image/samsung/latin-ru7100-un55ru7100pxpa-frontblack-155445710?$684_547_PNG$",
+		"id": 0
+	},
+	{
+		"title": "Pc",
+		"price": 65000,
+		"thumbnail": "https://images.samsung.com/is/image/samsung/latin-ru7100-un55ru7100pxpa-frontblack-155445710?$684_547_PNG$",
+		"id": 1
+	},
+	{
+		"title": "Mouse",
+		"price": 65000,
+		"thumbnail": "https://images.samsung.com/is/image/samsung/latin-ru7100-un55ru7100pxpa-frontblack-155445710?$684_547_PNG$",
+		"id": 2
+	},
+	{
+		"title": "Teclado",
+		"price": 65000,
+		"thumbnail": "https://images.samsung.com/is/image/samsung/latin-ru7100-un55ru7100pxpa-frontblack-155445710?$684_547_PNG$",
+		"id": 3
+	},
+	{
+		"title": "Escritorio",
+		"price": 65000,
+		"thumbnail": "https://images.samsung.com/is/image/samsung/latin-ru7100-un55ru7100pxpa-frontblack-155445710?$684_547_PNG$",
+		"id": 4
+	},
+	{
+		"title": "Botella",
+		"price": 65000,
+		"thumbnail": "https://images.samsung.com/is/image/samsung/latin-ru7100-un55ru7100pxpa-frontblack-155445710?$684_547_PNG$",
+		"id": 5
+	}
+]

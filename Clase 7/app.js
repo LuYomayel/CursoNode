@@ -11,7 +11,8 @@ class Producto{
     constructor(title, price, thumbnail){
         this.title = title;
         this.price = price;
-        this.thumbnail = thumbnail
+        this.thumbnail = thumbnail;
+        this.id = 0;
     }
     
 }
@@ -22,7 +23,9 @@ class Obj  {
         this.cantidad = 0;
     }
     agregarProductos(productos){
+        let i = 0;
         for(let producto of productos){
+            producto.id = i++;
             this.item.push(producto);
         }
         this.cantidad = productos.length;
@@ -72,6 +75,7 @@ arrayItems.push(item3);
 arrayItems.push(item4);
 arrayItems.push(item5);
 arrayItems.push(item6);
+
 
 obj.agregarProductos(arrayItems);
 obj.agregarAlTxt();
