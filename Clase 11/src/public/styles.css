@@ -1,0 +1,12 @@
+.form{
+    width: 70%;
+    margin-top: 10px;
+    background-color: lightgray;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.img{
+    width: 70px;
+    height: 70px;
+}
