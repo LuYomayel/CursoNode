@@ -7,4 +7,6 @@ router.get('/', (req, res) => {
     res.status(200).send('Welcome to My Ecommerce');
 });
 
+
+
 export default router;

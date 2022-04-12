@@ -1,0 +1,48 @@
+[
+	{
+		"title": "hol34",
+		"price": "20",
+		"thumbnail": "xd",
+		"description": "wtf",
+		"code": "432",
+		"stock": "2",
+		"id": 2
+	},
+	{
+		"title": "hol34",
+		"price": "20",
+		"thumbnail": "xd",
+		"description": "wtf",
+		"code": "432",
+		"stock": "2",
+		"id": 3
+	},
+	{
+		"title": "hol34",
+		"price": "20",
+		"thumbnail": "xd",
+		"description": "wtf",
+		"code": "432",
+		"stock": "2",
+		"id": 4
+	},
+	{
+		"title": "hol34",
+		"price": "20",
+		"thumbnail": "xd",
+		"description": "wtf",
+		"code": "432",
+		"stock": "2",
+		"timestamp": 1649787276248,
+		"id": 5
+	},
+	{
+		"title": "asd",
+		"price": "20",
+		"thumbnail": "xd",
+		"description": "wtf",
+		"code": "432",
+		"stock": "2",
+		"id": "1"
+	}
+]
