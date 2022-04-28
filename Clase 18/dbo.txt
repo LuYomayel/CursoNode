@@ -1,0 +1,77 @@
+use ecommerce
+
+// 1 - Agregar 10 documentos con valores distintos a las colecciones mensajes y productos. El formato de los documentos debe estar en correspondencia con el que venimos 
+// utilizando en el entregable con base de datos MariaDB. 
+
+db.productos.insertMany([
+{ "title" : "Mouse", "price" : 120 , "thumbnail": "www.img.com/1", "description": "alto producto", "code": 11, "stock": 12, "timestamp": 1234},
+{ "title" : "Teclado", "price" : 580 , "thumbnail": "www.img.com/2", "description": "alto producto", "code": 1, "stock": 31, "timestamp": 1234},
+{ "title" : "Monitor", "price" : 900 , "thumbnail": "www.img.com/3", "description": "alto producto", "code": 21, "stock": 121, "timestamp": 1234},
+{ "title" : "Celular", "price" : 1280 , "thumbnail": "www.img.com/4", "description": "alto producto", "code": 54, "stock": 8, "timestamp": 1234},
+{ "title" : "Mousepad", "price" : 1700 , "thumbnail": "www.img.com/5", "description": "alto producto", "code": 45, "stock": 481, "timestamp": 1234},
+{ "title" : "Gabinete", "price" : 2300 , "thumbnail": "www.img.com/6", "description": "alto producto", "code": 85, "stock": 48, "timestamp": 1234},
+{ "title" : "CPU", "price" : 2860 , "thumbnail": "www.img.com/7", "description": "alto producto", "code": 35, "stock": 35, "timestamp": 1234},
+{ "title" : "Auriculares", "price" : 3350 , "thumbnail": "www.img.com/8", "description": "alto producto", "code": 53, "stock": 9, "timestamp": 1234},
+{ "title" : "Microfono", "price" : 4320 , "thumbnail": "www.img.com/9", "description": "alto producto", "code": 74, "stock": 76, "timestamp": 1234},
+{ "title" : "Luces LED", "price" : 4990 , "thumbnail": "www.img.com/10", "description": "alto producto", "code": 98, "stock": 34, "timestamp": 1234}
+])
+
+db.mensajes.insertMany([
+{ "mail" : "l.yomayel@gmail.com", "mensaje" : "Hola" , "fecha y hora": "15/08/2022 14:15"},
+{ "mail" : "yomayelleandro@gmail.com", "mensaje" : "Hola" , "fecha y hora": "15/08/2022 14:15"},
+{ "mail" : "yomayelleandro@gmail.com", "mensaje" : "Como va?" , "fecha y hora": "15/08/2022 14:16"},
+{ "mail" : "yomayelleandro@gmail.com", "mensaje" : "Paso algo?" , "fecha y hora": "15/08/2022 14:20"},
+{ "mail" : "l.yomayel@gmail.com", "mensaje" : "Todo bien" , "fecha y hora": "15/08/2022 15:00"},
+{ "mail" : "l.yomayel@gmail.com", "mensaje" : "No, estoy aburrido nomas" , "fecha y hora": "15/08/2022 15:15"},
+{ "mail" : "yomayelleandro@gmail.com", "mensaje" : "Ah bueno" , "fecha y hora": "15/08/2022 15:25"},
+{ "mail" : "yomayelleandro@gmail.com", "mensaje" : "xd" , "fecha y hora": "15/08/2022 15:25"},
+{ "mail" : "l.yomayel@gmail.com", "mensaje" : "Que haces?" , "fecha y hora": "15/08/2022 16:00"},
+{ "mail" : "l.yomayel@gmail.com", "mensaje" : "xd" , "fecha y hora": "15/08/2022 16:01"},
+])
+
+// 3 - Listar todos los documentos en cada colección.
+db.productos.find().select({"price":1})
+db.mensajes.find()
+
+// 4 - Mostrar la cantidad de documentos almacenados en cada una de ellas.
+db.productos.count();
+db.mensajes.count();
+
+// 5 - a Agregar un producto más en la colección de productos 
+db.productos.insert(
+{ "title" : "Tarjeta", "price" : 200 , "thumbnail": "www.img.com/11", "description": "alto producto bro", "code": 99, "stock": 120, "timestamp": 1234})
+
+// 5 - b Realizar una consulta por nombre de producto específico:
+// i - Listar los productos con precio menor a 1000 pesos.
+db.productos.find({ "price": {$lte: 1000}})
+
+// ii - Listar los productos con precio entre los 1000 a 3000 pesos.
+db.productos.find({  $and: [{"price": {$lte: 3000}}, {"price": {$gte : 1000}}]})
+
+// iii - Listar los productos con precio mayor a 3000 pesos.
+db.productos.find({ "price": {$gt: 3000}})
+
+// iv - Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
+db.productos.find({} , {"title":1}).sort({price: 1}).skip(2).limit(1)
+
+// c -  Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
+db.productos.update({"stock": {$gte:0}},{$set: {"stock": 100}}, {"multi" : true})
+
+// d - Cambiar el stock a cero de los productos con precios mayores a 4000 pesos. 
+db.productos.update({"price": {$gte:4000}},{$set: {"stock": 0}}, {"multi" : true})
+
+// e - Borrar los productos con precio menor a 1000 pesos 
+db.productos.remove({"price": {$lte:1000}})
+
+// 6 - Crear un usuario 'pepe' clave: 'asd456' que sólo pueda leer la base de datos ecommerce. Verificar que pepe no pueda cambiar la información.
+db.createUser({
+	user: "pepe",
+	pwd: "'asd456' ",
+	roles: [
+		{role: "read", db: "ecommerce"}
+	]
+})
+
+
+
+
