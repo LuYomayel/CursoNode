@@ -1,7 +1,6 @@
 'use strict';
 import CartManager from '../../models/cart.model.js'
 import fs from 'fs';
-import { isArray } from 'util';
 import util from 'util';
 const file = 'cart.json';
 
