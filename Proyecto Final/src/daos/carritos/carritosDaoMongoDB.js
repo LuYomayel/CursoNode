@@ -7,4 +7,4 @@ class CarritosDaoMongoDB extends ContenedorMongoDB {
     }
 }
 
-module.exports = new CarritosDaoMongoDB();
+export default new CarritosDaoMongoDB();

@@ -16,7 +16,7 @@ switch (config.database.engine) {
         daoCarritos = CarritosDaoMongoDB;
 }
 
-module.exports = {
+export default {
     daoProductos,
     daoCarritos
 }
